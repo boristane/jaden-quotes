@@ -1,0 +1,89 @@
+body{
+	background-color: black;
+}
+
+.quote-box{
+	margin: 10% auto auto auto;
+	width: 600px;
+	background-color: white;
+	padding: 20px 50px 20px 50px;
+	border-radius: 3px;
+}
+
+#logo{
+  height: 64px;
+}
+
+nav{
+	
+}
+
+.quote{
+	font-family: 'Oxygen', serif;
+}
+
+#quotation-mark{
+	font-size: 50px;
+}
+
+#quote-line{
+	margin: 10px 0px 10px 0px;
+	text-align: justify;
+	line-height: 0.6em;
+}
+
+#quote{
+	font-size: 0.5em;
+}
+
+#author{
+	text-align: right;
+	font-size: 1.6em;
+	font-family: 'Indie Flower', cursive;
+}
+
+#source{
+	text-align: right;
+	font-size: 1.0em;
+	margin-top: -10px;
+	color: grey;
+}
+
+#source-link:visited{
+	color: grey;
+}
+
+#source-link:hover{
+	color: black;
+}
+
+
+.btn{
+	background-color: white;
+}
+
+#new-quote-btn{
+	text-align: right;
+}
+
+footer{
+	text-align: center;
+	font-size: 0.8em;
+	color: white;
+}
+
+footer a{
+	color: white;
+}
+
+footer a:visited{
+	color: white;
+}
+
+footer a:hover{
+	color: black;
+}
+
+
+
+
