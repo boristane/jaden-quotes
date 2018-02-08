@@ -82,8 +82,8 @@ footer a:hover{
 @media screen and (max-width: 700px) {
     .quote-box{
 		margin: 10% auto auto auto;
-		width: 80%;
-		padding: 10px 30px 10px 30px;
+		width: 90%;
+		padding: 10px 20px 10px 20px;
 	}
 
 	#logo{
