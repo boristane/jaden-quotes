@@ -8,7 +8,6 @@ $("document").ready(function(){
 	
 	var UI = {
 		newQuoteBtn: $("#new-quote"),
-		facebookBtn: $("#facebook"),
 		twitterBtn: $("#twitter"),
 		btns: $(".btn"),
 		quoteBox: $("#quote-box"),
@@ -29,8 +28,8 @@ $("document").ready(function(){
 	UI.twitterBtn.click(function(e){
 		e.preventDefault();
 		var tweet = '"' + UI.quoteElt.text() + '" - Jaden Smith';
-		tweetIt(tweet, "https://www.google.co.uk", "music");
-	});
+		tweetIt(tweet, "https://boristane.github.io/jaden-quotes/", "jadenQuotes");
+    });
 	
 	function newQuote(){
         var quoteIndex = Math.floor(Math.random()*quotes.length);
@@ -56,7 +55,8 @@ $("document").ready(function(){
 	function tweetIt(text, url="", hashtag=""){
 		var tweetURL = "https://twitter.com/share?text=" + encodeURIComponent(text) + "&url=" + encodeURIComponent(url) + "&hashtags=" + encodeURIComponent(hashtag);
 		window.open(tweetURL);
-	}
+    }
+
 });
 
 
@@ -77,6 +77,8 @@ function hexBrightness(hex) {
     return null;
 }
 
+
+// Inspired by https://github.com/pcarn/hubot-jaden
 var quotes = [
     {
         author: "Jaden Smith",
@@ -386,7 +388,7 @@ var quotes = [
     {
         author: "Jaden Smith", 
         quote: "If A Cup Cake Falls From A Tree How Far Away Will It Be From Down. #Jupiter", 
-        source: "If A Cup Cake Falls From A Tree How Far Away Will It Be From Down. #Jupiter"
+        source: "https://twitter.com/officialjaden/status/505187394724069377?lang=en"
     },
     {
         author: "Jaden Smith", 

@@ -14,10 +14,6 @@ body{
   height: 64px;
 }
 
-nav{
-	
-}
-
 .quote{
 	font-family: 'Oxygen', serif;
 }
@@ -28,7 +24,6 @@ nav{
 
 #quote-line{
 	margin: 10px 0px 10px 0px;
-	text-align: justify;
 	line-height: 0.6em;
 }
 
@@ -57,13 +52,8 @@ nav{
 	color: black;
 }
 
-
 .btn{
 	background-color: white;
-}
-
-#new-quote-btn{
-	text-align: right;
 }
 
 footer{
