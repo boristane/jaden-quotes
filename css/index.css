@@ -52,6 +52,11 @@ body{
 	color: black;
 }
 
+.btns{
+	text-align: center;
+	line-height: 50px;
+}
+
 .btn{
 	background-color: white;
 }
@@ -74,6 +79,16 @@ footer a:hover{
 	color: black;
 }
 
+@media screen and (max-width: 700px) {
+    .quote-box{
+		margin: 10% auto auto auto;
+		width: 80%;
+		padding: 10px 30px 10px 30px;
+	}
 
+	#logo{
+		height: 55px;
+	}
+}
 
 
