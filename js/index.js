@@ -33,15 +33,17 @@ $("document").ready(function(){
 	});
 	
 	function newQuote(){
+        var quoteIndex = Math.floor(Math.random()*quotes.length);
+        var quote = quotes[quoteIndex];
 		UI.quotePairElt.fadeOut(1000);
 		UI.quotePairElt.fadeOut(1000);
 		var colorIndex = Math.floor(Math.random()*colors.length);
 		var color = colors[colorIndex].hex;
 		console.log(colors[colorIndex]);
 		setTimeout(function(){
-			UI.quoteElt.text("I have clicked. je wanda meme sur les gars dans ce pays. Ils ne comprennent pas que c'est le 9?");
-			UI.authorElt.text("- Jaden Smith");
-			UI.sourceElt.attr("href", "https://www.google.co.uk");
+			UI.quoteElt.text(quote.quote);
+			UI.authorElt.text("- " + quote.author);
+			UI.sourceElt.attr("href", quote.source);
 			UI.sourceElt.text("source");
 			UI.quotePairElt.css("color", color);
 			UI.bodyElt.animate({"background-color": color}, 800, "linear");
@@ -49,8 +51,8 @@ $("document").ready(function(){
 			UI.quotePairElt.fadeIn(1000);
 			UI.sourceElt.fadeIn(1000);
 		}, 800);
-	}
-	
+    }
+    	
 	function tweetIt(text, url="", hashtag=""){
 		var tweetURL = "https://twitter.com/share?text=" + encodeURIComponent(text) + "&url=" + encodeURIComponent(url) + "&hashtags=" + encodeURIComponent(hashtag);
 		window.open(tweetURL);
@@ -74,6 +76,414 @@ function hexBrightness(hex) {
     }
     return null;
 }
+
+var quotes = [
+    {
+        author: "Jaden Smith",
+        quote: "I Hope It Doesn't Take For Me To Die For You To See What I Do For You",
+        source: "https://twitter.com/officialjaden/status/318914388801224704?lang=en"
+    },
+    {
+        author: "Jaden Smith",
+        quote: "I Watch Twilight Every Night",
+        source: "https://twitter.com/officialjaden/status/225145348803411971?lang=en"
+    },
+    {
+        author: "Jaden Smith",
+        quote: "Most Trees Are Blue",
+        source: "https://twitter.com/officialjaden/status/315602583697895424?lang=en"
+    },
+    {
+        author: "Jaden Smith",
+        quote: "People Use To Ask Me What Do You Wanna Be When You Get Older And I Would Say What A Stupid Question The Real Question Is What Am I Right Now",
+        source: "https://twitter.com/officialjaden/status/375647584955555842?lang=en"
+    },
+    {
+        author: "Jaden Smith",
+        quote: "How Can Mirrors Be Real If Our Eyes Aren't Real",
+        source: "https://twitter.com/officialjaden/status/329768040235413504?lang=en"
+    },
+    {
+        author: "Jaden Smith",
+        quote: "If Newborn Babies Could Speak They Would Be The Most Intelligent Beings On Planet Earth.",
+        source: "https://twitter.com/officialjaden/status/378297797100851200?lang=en"
+    },
+    {
+        author: "Jaden Smith",
+        quote: "I Only Apply To The Sixth Amendment",
+        source: "https://twitter.com/officialjaden/status/280192548780244992?lang=en"
+    },
+    {
+        author: "Jaden Smith",
+        quote: "I'm 13 This Is Ridiculous",
+        source: "https://twitter.com/officialjaden/status/175306116153098240?lang=en"
+    },
+    {
+        author: "Jaden Smith", 
+        quote: "When I Die. Then You Will Realize", 
+        source: "https://twitter.com/officialjaden/status/385481699183706112?lang=en"
+    },
+    {
+        author: "Jaden Smith", 
+        quote: "I've Bin Drinking Distilled Water For So Long That When I Drink Normal Water It Feels Like I'm Swallowing Huge Chunks Of Aluminum.", 
+        source: "https://twitter.com/officialjaden/status/528858405080166401?lang=en"
+    },
+    {
+        author: "Jaden Smith", 
+        quote: "You Would Have To Eat 5 Apples Today To Get The Same Nutritional Value As An Apple From 1950.", 
+        source: "https://twitter.com/officialjaden/status/388385927736733696?lang=en"
+    },
+    {
+        author: "Jaden Smith", 
+        quote: "Dying Is MainStream #MONEY", 
+        source: "https://twitter.com/officialjaden/status/282038051633524736?lang=en"
+    },
+    {
+        author: "Jaden Smith", 
+        quote: "\"It's Your Birthday\" Mateo Said. I Didn't Respond.… Reading My Book I Uttered \"I Turned 15 Long Ago\"", 
+        source: "https://twitter.com/officialjaden/status/354478713745846272?lang=en"
+    },
+    {
+        author: "Jaden Smith", 
+        quote: "I Will Always Give You The Truth I Will Never Lie To You In My music If You Cant Handle My Feelings And Emotions Please Unfollow Me", 
+        source: "https://twitter.com/officialjaden/status/263028718438608896"
+    },
+    {
+        author: "Jaden Smith", 
+        quote: "Ill Never Forget The Blogs That Believed In Me Since The Begging.", 
+        source: "https://twitter.com/officialjaden/status/285095784310005761?lang=en"
+    },
+    {
+        author: "Jaden Smith", 
+        quote: "People Tell Me To Smile I Tell Them The Lack Of Emotion In My Face Doesn't Mean I'm Unhappy", 
+        source: "https://twitter.com/officialjaden/status/286027844235194368?lang=en"
+    },
+    {
+        author: "Jaden Smith", 
+        quote: "You Must Not Know Fashion", 
+        source: "https://twitter.com/officialjaden/status/316035335660400640?lang=en"
+    },
+    {
+        author: "Jaden Smith", 
+        quote: "If A Book Store Never Runs Out Of A Certain Book, Dose That Mean That Nobody Reads It, Or Everybody Reads It", 
+        source: "https://twitter.com/officialjaden/status/364983720664514560?lang=en"
+    },
+    {
+        author: "Jaden Smith", 
+        quote: "All The Rules In This World Were Made By Someone No Smarter Than You. So Make Your Own.", 
+        source: "https://twitter.com/officialjaden/status/377146748226904064?lang=en"
+    },
+    {
+        author: "Jaden Smith", 
+        quote: "School Is The Tool To Brainwash The Youth.", 
+        source: "https://twitter.com/officialjaden/status/378229866857906176?lang=en"
+    },
+    {
+        author: "Jaden Smith", 
+        quote: "Trees Are Never Sad Look At Them Every Once In Awhile They're Quite Beautiful", 
+        source: "https://twitter.com/officialjaden/status/380853488189599744"
+    },
+    {
+        author: "Jaden Smith", 
+        quote: "We Need To Stop Teaching The Youth About The Past And Encourage Them To Change The Future", 
+        source: "https://twitter.com/officialjaden/status/388436680761290753?lang=en"
+    },
+    {
+        author: "Jaden Smith", 
+        quote: "There Is No Nutrients In Our Food Anymore Or In Our Soil OR IN OUR WATER.", 
+        source: "https://twitter.com/officialjaden/status/388429534980079617?lang=en"
+    },
+    {
+        author: "Jaden Smith", 
+        quote: "You Think You Get It. YOU DONT YOU DONT YOU DONT!!!!!!!", 
+        source: "https://twitter.com/officialjaden/status/440642520897171456?lang=en"
+    },
+    {
+        author: "Jaden Smith", 
+        quote: "I Scare People Away", 
+        source: "https://twitter.com/officialjaden/status/461681649600565248?lang=en"
+    },
+    {
+        author: "Jaden Smith", 
+        quote: "Either I Lie To You Or We Cry Together", 
+        source: "https://twitter.com/officialjaden/status/461607816285790208?lang=en"
+    },
+    {
+        author: "Jaden Smith", 
+        quote: "If I Had A Nickel For Every Time I've Cried In The Back Of An Uber, I Would Have Another Pair Of Yeezy's", 
+        source: "https://twitter.com/officialjaden/status/648225383972741120?lang=en"
+    },
+    {
+        author: "Jaden Smith", 
+        quote: "You Can Discover Everything You Need To Know About Everything By Looking At Your Hands", 
+        source: "https://twitter.com/officialjaden/status/464965225943662592?lang=en"
+    },
+    {
+        author: "Jaden Smith", 
+        quote: "When The First Animal Went Extinct That Should've Bin A Sign.", 
+        source: "https://twitter.com/officialjaden/status/499276336469266432?lang=en"
+    },
+    {
+        author: "Jaden Smith", 
+        quote: "If I Die In My Flannel Will You Write My Poems On Tyler's 5 Panels And Jesusus Sandals This Plane Is Just To Much To Handle.", 
+        source: "https://twitter.com/officialjaden/status/524949781882236929?lang=en"
+    },
+    {
+        author: "Jaden Smith", 
+        quote: "I Build Pyramids Constantly", 
+        source: "https://twitter.com/officialjaden/status/513161725592346625?lang=en"
+    },
+    {
+        author: "Jaden Smith", 
+        quote: "Anyone Born On This Planet Should Have A Planetary Citizenship Enabling Them To Freely Explore There Home", 
+        source: "https://twitter.com/officialjaden/status/529055327128662016?lang=en"
+    },
+    {
+        author: "Jaden Smith", 
+        quote: "I Don't Want You Guys To Think Because I Was Born In America That I Speak And Abide By English Grammar. I Speak Jaden, Indefinitely.", 
+        source: "https://twitter.com/officialjaden/status/529337973138259969?lang=en"
+    },
+    {
+        author: "Jaden Smith", 
+        quote: "You Taught Me How To Play The Piano But Have Never Heard Me.", 
+        source: "https://twitter.com/officialjaden/status/531658409381490688?lang=en"
+    },
+    {
+        author: "Jaden Smith", 
+        quote: "Don't Worry Bae I'll Talk To You About SpaceTime Over FaceTime.", 
+        source: "https://twitter.com/officialjaden/status/544954151071776768?lang=en"
+    },
+    {
+        author: "Jaden Smith", 
+        quote: "I Just Scrolled Through My Tweets And \"I\" Started Laughing.", 
+        source: "https://twitter.com/officialjaden/status/546909422706892800?lang=en"
+    },
+    {
+        author: "Jaden Smith", 
+        quote: "The Head Of The Sphinx Will Fall Off In The Near Future.", 
+        source: "https://twitter.com/officialjaden/status/547555082238038016?lang=en"
+    },
+    {
+        author: "Jaden Smith", 
+        quote: "HardWork Dedication Until There's Peace And Non Poverty In Every Nation, And I Isn't Patient. ||", 
+        source: "https://twitter.com/officialjaden/status/650395574865276928"
+    },
+    {
+        author: "Jaden Smith", 
+        quote: "Every 7 Years Your Body Is Completely Replaced With Entirely New Cells So Just Because You Look The Same Doesn't Mean You Are.", 
+        source: "https://twitter.com/officialjaden/status/528852182985371648?lang=en"
+    },
+    {
+        author: "Jaden Smith", 
+        quote: "People Hate What They Don't Understand", 
+        source: "https://twitter.com/officialjaden/status/436692954078408705?lang=en-gb"
+    },
+    {
+        author: "Jaden Smith", 
+        quote: "\"Hey Are You Jaden Can I Have A Picture With You\" No Cause I'm Super Sad But We Can Sit And Talk.", 
+        source: "https://twitter.com/officialjaden/status/516721635819524096?lang=en"
+    },
+    {
+        author: "Jaden Smith", 
+        quote: "Haters Are Just Pre Creators Who Need The Seed Of Greatness.", 
+        source: "https://twitter.com/officialjaden/status/539903412360323072?lang=en"
+    },
+    {
+        author: "Jaden Smith", 
+        quote: "If I Was Moses Where Would I Be", 
+        source: "https://twitter.com/officialjaden/status/308188681947209728"
+    },
+    {
+        author: "Jaden Smith", 
+        quote: "If Everybody In The World Dropped Out Of School We Would Have A Much More Intelligent Society.", 
+        source: "https://twitter.com/officialjaden/status/378590250546655232?lang=en"
+    },
+    {
+        author: "Jaden Smith", 
+        quote: "I Should Just Stop Tweeting, The Human Consciousness Must Raise Before I Speak My Juvenile Philosophy.", 
+        source: "https://twitter.com/officialjaden/status/386301389229408256?lang=en"
+    },
+    {
+        author: "Jaden Smith", 
+        quote: "I Read “The Ancient Secret of the Flower of Life” And Ancient Texts. Things That Cant Be Pre-dated.", 
+        source: "https://tmagazine.blogs.nytimes.com/2014/11/17/jaden-and-willow-smith-exclusive-joint-interview/?_r=0"
+    },
+    {
+        author: "Jaden Smith", 
+        quote: "When You Think About An Apple You Also Think About The Opposite Of An Apple", 
+        source: "https://tmagazine.blogs.nytimes.com/2014/11/17/jaden-and-willow-smith-exclusive-joint-interview/?_r=0"
+    },
+    {
+        author: "Jaden Smith", 
+        quote: "You Never Learn Anything In School. Think About Ho…t See How Driver’s Ed Is Really Helping Them Out.", 
+        source: "https://tmagazine.blogs.nytimes.com/2014/11/17/jaden-and-willow-smith-exclusive-joint-interview/"
+    },
+    {
+        author: "Jaden Smith", 
+        quote: "This Cute Little Blonde Baby Just Looked At Me.", 
+        source: "https://twitter.com/officialjaden/status/557618675675824128?lang=en"
+    },
+    {
+        author: "Jaden Smith", 
+        quote: "Currently Going Through Customs Even Though I Was Born On This Planet.", 
+        source: "https://twitter.com/officialjaden/status/537340266882285568?lang=en"
+    },
+    {
+        author: "Jaden Smith", 
+        quote: "Gimme 12 months. You See What's Bin Started", 
+        source: "https://twitter.com/officialjaden/status/532743351078883328"
+    },
+    {
+        author: "Jaden Smith", 
+        quote: "That's Art Ladies And Gentlemen", 
+        source: "https://twitter.com/officialjaden/status/532743178370023424?lang=en"
+    },
+    {
+        author: "Jaden Smith", 
+        quote: "Drake Is Tight.", 
+        source: "https://twitter.com/officialjaden/status/530960389635194880?lang=en"
+    },
+    {
+        author: "Jaden Smith", 
+        quote: "No Pain No Gain Young Kurt Cobain.", 
+        source: "https://twitter.com/officialjaden/status/524949607747309568?lang=en"
+    },
+    {
+        author: "Jaden Smith", 
+        quote: "Dear Everybody Who Can Rap Better Than Me. Please Show Me", 
+        source: "https://twitter.com/officialjaden/status/523151432552165376?lang=en"
+    },
+    {
+        author: "Jaden Smith", 
+        quote: "Dear The Internet Have Fun With That.", 
+        source: "https://twitter.com/officialjaden/status/520033508849233921?lang=en"
+    },
+    {
+        author: "Jaden Smith", 
+        quote: "Once All 100% Is Neglected You Have A Citizen. A Walking Zombie Who Criticizes Every Thing They See. Have Fun Its A Really Awesome Place.", 
+        source: "https://twitter.com/officialjaden/status/519517246105079808"
+    },
+    {
+        author: "Jaden Smith", 
+        quote: "Hate Me Love Me Doesn't Matter I'm Still Occupying Time Inside Of Your Psyche.", 
+        source: "https://twitter.com/officialjaden/status/516083952701157377?lang=en"
+    },
+    {
+        author: "Jaden Smith", 
+        quote: "Teleport To Me.", 
+        source: "https://twitter.com/officialjaden/status/514981028285677568?lang=en"
+    },
+    {
+        author: "Jaden Smith", 
+        quote: "I Feel Like People Who Look Similar Act Similar.", 
+        source: "https://twitter.com/officialjaden/status/510225088583450624?lang=en"
+    },
+    {
+        author: "Jaden Smith", 
+        quote: "My Parents Are The Trillest People I Know", 
+        source: "https://twitter.com/officialjaden/status/509532549073207296"
+    },
+    {
+        author: "Jaden Smith", 
+        quote: "If A Cup Cake Falls From A Tree How Far Away Will It Be From Down. #Jupiter", 
+        source: "If A Cup Cake Falls From A Tree How Far Away Will It Be From Down. #Jupiter"
+    },
+    {
+        author: "Jaden Smith", 
+        quote: "To Kiss A Humming Bird...", 
+        source: "https://twitter.com/officialjaden/status/504808620597334017"
+    },
+    {
+        author: "Jaden Smith", 
+        quote: "SPIDER MAN IS AMAZING OH MY GOD !!!!!! PLEASE GO WATCH IT", 
+        source: "https://twitter.com/officialjaden/status/462101224947326977?lang=en"
+    },
+    {
+        author: "Jaden Smith", 
+        quote: "Unawareness Is The Only Sin, And If You Were Aware You Would Know.", 
+        source: "https://twitter.com/officialjaden/status/458855134353563648?lang=en"
+    },
+    {
+        author: "Jaden Smith", 
+        quote: "People Think A RelationShip Makes You Whole, That It's Two 50%'s Coming Together To Make 100% When It Should Be Two 100%'s Making 200%", 
+        source: "https://twitter.com/officialjaden/status/441078329588740096?lang=en"
+    },
+    {
+        author: "Jaden Smith", 
+        quote: "Water In The Eyes And Alcohol In The Eyes Are Pretty Much The Same I Know This From First Hand Experience.", 
+        source: "https://twitter.com/officialjaden/status/440652726528012288?lang=en"
+    },
+    {
+        author: "Jaden Smith", 
+        quote: "Your Passion For Hating Me Is The Same Passion I Have For SacGeometry And MagLev Technology And Any Passion Is To Be Respected", 
+        source: "https://twitter.com/officialjaden/status/441071970927386625"
+    },
+    {
+        author: "Jaden Smith", 
+        quote: "I'm Here If You Need A Fellow Insane Person To Talk To. But I'm Seriously Here Not Like One Of Those I'm Here For You's That Everybody Says.", 
+        source: "https://twitter.com/officialjaden/status/435280172472745984?lang=en"
+    },
+    {
+        author: "Jaden Smith", 
+        quote: "If Everybody Got To Meet Me In Real Life, 50% Of My Fans Would Hate Me And 50% of My Hatters Would Love Me.", 
+        source: "https://twitter.com/officialjaden/status/429097392059588608?lang=en"
+    },
+    {
+        author: "Jaden Smith", 
+        quote: "I'm Slowly Realizing I Need To Make A Trip Out To Norway", 
+        source: "https://twitter.com/officialjaden/status/421422403365781504?lang=en"
+    },
+    {
+        author: "Jaden Smith", 
+        quote: "I Don't Like To Tweet But The New Hunger Games Is Literally Amazing.", 
+        source: "https://twitter.com/officialjaden/status/402689964204249088?lang=en"
+    },
+    {
+        author: "Jaden Smith", 
+        quote: "The Current Population Of Earth Is 7,124,102,180", 
+        source: "https://twitter.com/officialjaden/status/400735990240669697?lang=en"
+    },
+    {
+        author: "Jaden Smith", 
+        quote: "I Encourage You All To Unfollow Me So I Can Be Left With The People Who Actually Appreciate Philosophy And Poetry. #CoolTapeVol2", 
+        source: "https://twitter.com/officialjaden/status/389213376309514240?lang=en"
+    },
+    {
+        author: "Jaden Smith", 
+        quote: "Why Is It Always 3 WHY IS IT ALWAYS 3!!!!!", 
+        source: "https://twitter.com/officialjaden/status/384227722525827072?lang=en"
+    },
+    {
+        author: "Jaden Smith", 
+        quote: "The Great Gatsby Is One Of The Greatest Movies Of All Time, Coachella.", 
+        source: "https://twitter.com/officialjaden/status/384234322472869888?lang=en"
+    },
+    {
+        author: "Jaden Smith", 
+        quote: "Lately People Call Me Scoop Life", 
+        source: "https://twitter.com/officialjaden/status/338419055524462592?lang=en"
+    },
+    {
+        author: "Jaden Smith", 
+        quote: "I Gave Justin His Cartier Then Went Home.", 
+        source: "https://twitter.com/officialjaden/status/307968140107714563"
+    },
+    {
+        author: "Jaden Smith", 
+        quote: "Once You Go In You Always Come Out Alive", 
+        source: "https://twitter.com/officialjaden/status/279825987661869056?lang=en"
+    },
+    {
+        author: "Jaden Smith", 
+        quote: "Swear To God If Who Hacked My Instagram Is Who I Think Hacked My Instagram..........Good Luck", 
+        source: "https://twitter.com/officialjaden/status/247432472290263040?lang=en"
+    },
+    {
+        author: "Jaden Smith", 
+        quote: "I Cried When I Made This #StarryRoom", 
+        source: "https://twitter.com/officialjaden/status/240019288109498368"
+    }
+];
 
 var allColors = [
 
