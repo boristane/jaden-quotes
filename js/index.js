@@ -4,13 +4,11 @@ $("document").ready(function(){
 		return hexBrightness(color.hex) < 0.5;
 	});
 	
-	console.log(colors.length);
-	
 	var UI = {
 		newQuoteBtn: $("#new-quote"),
 		twitterBtn: $("#twitter"),
 		btns: $(".btn"),
-		quoteBox: $("#quote-box"),
+		quoteBox: $(".quote-box"),
 		quoteElt: $("#quote"),
 		authorElt: $("#author"),
 		sourceElt: $("#source-link"),
@@ -18,7 +16,9 @@ $("document").ready(function(){
 		bodyElt: $("body")
 	}
 	
-	newQuote();
+    newQuote();
+    
+    setInterval(newQuote, 0.1*60*1000);
 
 	UI.newQuoteBtn.click(function(e){
 		e.preventDefault();
@@ -38,7 +38,7 @@ $("document").ready(function(){
 		UI.quotePairElt.fadeOut(1000);
 		var colorIndex = Math.floor(Math.random()*colors.length);
 		var color = colors[colorIndex].hex;
-		console.log(colors[colorIndex]);
+		var quoteBoxHeight;
 		setTimeout(function(){
 			UI.quoteElt.text(quote.quote);
 			UI.authorElt.text("- " + quote.author);
@@ -48,8 +48,17 @@ $("document").ready(function(){
 			UI.bodyElt.animate({"background-color": color}, 800, "linear");
 			UI.btns.animate({"background-color": color});
 			UI.quotePairElt.fadeIn(1000);
-			UI.sourceElt.fadeIn(1000);
-		}, 800);
+            UI.sourceElt.fadeIn(1000);
+            quoteBoxHeight = UI.quoteElt.outerHeight(true) + UI.authorElt.outerHeight(true) + UI.sourceElt.outerHeight(true) + 3.5*UI.btns.outerHeight(true);
+            console.log(quoteBoxHeight);         
+        }, 800);
+
+        if($(window).width() > 600){
+            setTimeout(function(){
+                UI.quoteBox.animate({"height": quoteBoxHeight}, 200);
+            }, 800);
+        }
+        
     }
     	
 	function tweetIt(text, url="", hashtag=""){
