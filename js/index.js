@@ -2,8 +2,8 @@ $("document").ready(function(){
 	
 	var colors = allColors.filter(function(color){
 		return hexBrightness(color.hex) < 0.5;
-	});
-	
+    });
+    
 	var UI = {
 		newQuoteBtn: $("#new-quote"),
 		twitterBtn: $("#twitter"),
@@ -49,8 +49,7 @@ $("document").ready(function(){
 			UI.btns.animate({"background-color": color});
 			UI.quotePairElt.fadeIn(1000);
             UI.sourceElt.fadeIn(1000);
-            quoteBoxHeight = UI.quoteElt.outerHeight(true) + UI.authorElt.outerHeight(true) + UI.sourceElt.outerHeight(true) + 3.5*UI.btns.outerHeight(true);
-            console.log(quoteBoxHeight);         
+            quoteBoxHeight = UI.quoteElt.outerHeight(true) + UI.authorElt.outerHeight(true) + UI.sourceElt.outerHeight(true) + 3.5*UI.btns.outerHeight(true);         
         }, 800);
 
         if($(window).width() > 600){
@@ -85,6 +84,7 @@ function hexBrightness(hex) {
     }
     return null;
 }
+
 
 
 // Inspired by https://github.com/pcarn/hubot-jaden
